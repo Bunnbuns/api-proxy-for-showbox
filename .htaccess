@@ -1,0 +1,12 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+Options +FollowSymlinks
+RewriteEngine on
+
+#for keeping a local folder accessable (optional)
+RewriteRule ^local/ - [L]
+RewriteRule ^local$ - [L]
+
+#forwards path from 'path.php?path=/api/foo' to /a-folder/api/foo
+RewriteRule ^(.*)$ path.php?path=$1 [QSA]
+</IfModule>
