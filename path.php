@@ -8,6 +8,7 @@ $params = http_build_query($exploded);
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                      #domain goes here \/
 curl_setopt($ch, CURLOPT_URL, 'http://sbrapi.cc/'.$_GET['path'].'?'.$params);
 curl_setopt($ch,CURLOPT_USERAGENT,'Show Box');
 $result = curl_exec($ch);
